@@ -37,14 +37,14 @@ function Footer() {
                     </li>
                 </ul>
             </div> 
-            <div className='pt-6  flex justify-between items-center bg-blue'> 
+            <div className='pt-6  flex justify-between items-center '> 
                 <label htmlFor="" className='flex flex-row items-center gap-4 border border-color-white-500 w-[85%] py-3 rounded-sm'>
                     <FontAwesomeIcon icon={faEnvelope} className="icon-style px-2 cursor-pointer" />
                     <input type="email" placeholder='Sign up for updates on our latest innovations' className='text-white  w-[80%] outline-none bg-transparent   ' />
                 </label>
-                <button className='text-white bg-transparent border border-color-white font-mono py-[10px] px-[30px] transition duration-700 hover:bg-white rounded-md hover:text-black'>Sign in</button>
+                <button className='text-white text-[18px] font-bold	 bg-transparent border border-color-white font-mono py-[10px] px-[30px] transition duration-700 hover:bg-[red] rounded-md hover:text-white'>Sign in</button>
             </div>
-            <div className='text-white text-[12px] text-center py-3 font-mono'>
+            <div className='text-black text-[12px] text-center py-3 font-mono'>
                 <p>NETFILM ©ALL RIGHTS RESERVED</p>
             </div>
       </section>

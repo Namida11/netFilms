@@ -7,7 +7,7 @@ function Input({ value, onChange, placeholder, className}) {
         value={value}
         onChange={onChange}
         placeholder={placeholder} 
-        className={`bg-white bg-opacity-10 shadow-xl  font-thin	 rounded px-6 py-1 focus:outline-none ${className}`} 
+        className={`  font-thin	 rounded px-6 py-1 focus:outline-none ${className}`} 
         />
     </>
  
