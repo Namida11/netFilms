@@ -5,7 +5,7 @@ function Categories() {
   return (
    <>
     <section className='categories-sec py-7'>
-      <div className='w-60%'>
+      <div className='w-100%'>
         <ul className='flex gap-4 text-[14px] font-sans'>
           <li className='w-[10%]'>
             <Button className={`w-[100%]`}>{'Adventure'}</Button>

@@ -6,9 +6,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 function Footer() {
   return (
     <>
-      <section className='footer'>
+      <section className='footer my-[40px]'>
             <div className="social flex  items-center gap-4 border-b-[1px] py-5">
-                <h3 className='text-[white] text-[14px] md:text-[18px]'>Follow us</h3>
+                <h3 className='text-[white]  text-[14px] md:text-[18px] '>Follow us</h3>
                 <ul className='flex items-center gap-2 md:gap-5 icon-mobile  md:icon-style'>
                     <li>
                         <a href="">
