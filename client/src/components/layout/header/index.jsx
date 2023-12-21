@@ -35,17 +35,17 @@ function Header() {
               <li><a href="" className='transition duration-700 hover:text-[red]'>SERIES</a> </li>
               <li> <a href="" className='transition duration-700 hover:text-[red]'>KIDS</a></li>
            </ul>
-           <FontAwesomeIcon icon={faBars} className="block md:hidden text-[20px] md:text-[16px] " />
+          
           </div>
           <div  className='account '>
             <ul className='flex gap-4'>
               <li>
-                <FontAwesomeIcon icon={faHeart} className="text-red text-[20px] md:text-[16px]" />
+                <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] transition duration-700 md:text-[16px]" />
               </li>
               <li> 
                  <FontAwesomeIcon icon={faUser} className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
               </li>
-              
+               <FontAwesomeIcon icon={faBars} className="block md:hidden text-[20px] md:text-[16px] " />
             </ul>
            
          

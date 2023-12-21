@@ -9,15 +9,13 @@
     background-image: url("https://www.manzara.gen.tr/w1/harry-potter-resimleri.jpg");
     background-size: cover;
     background-position: center;
-    
-
-
   }
-  .icon-style{
+  .icon-style {
     color: white;
     font-size: 20px;
   }
+  .icon-mobile {
+     color: white;
+    font-size: 14px;
+  }
 }
-
-  
-
