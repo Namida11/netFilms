@@ -8,10 +8,8 @@ function Home() {
     <>
     <div className='w-10/12 mx-auto '>
         <Header />
-       
-          <Categories/>
-          <MovieList/>
-        
+        <Categories/>
+        <MovieList/>
         <Footer/>
        
     </div>

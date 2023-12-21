@@ -3,16 +3,23 @@
 @tailwind utilities;
 @layer components {
   .custom-button {
-   color: rgb(255, 255, 255);
-   background-color: rgb(175, 2, 2);
-   border: 1px solid black;
-   box-shadow: 0px 4px 6px rgba(0, 0, 1, 0.1);
-   padding: 6px 0;
-   width: 100%;
-   font-weight: 400;
+  color: rgb(255, 255, 255);
+  background-color: rgb(175, 2, 2);
+  border: 1px solid black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 1, 0.1);
+  padding: 6px 0;
+  width: 100%;
+  font-weight: 400;
   border-radius: 0.375rem;
-  
+  transition: ease-in 0.7ms  ;
+  -webkit-transition: ease-in 0.7ms  ;
+  -moz-transition: ease-in 0.7ms  ;
+  -ms-transition: ease-in 0.7ms  ;
+  -o-transition: ease-in 0.7ms  ;
 }
+  .custom-button:hover{
+    opacity: 0.8;
+  }
   .bg-custom-image {
     background-image: url("https://www.manzara.gen.tr/w1/harry-potter-resimleri.jpg");
     background-size: cover;

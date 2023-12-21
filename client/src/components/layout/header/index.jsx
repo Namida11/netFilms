@@ -1,15 +1,14 @@
 import React from 'react'
 import Input from '../../UI/input'
-import user from './user.svg'
-import search from './search.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faSearch, faUser,faBars  } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
   return (
     <>
-       <div className=' text-white flex items-center  justify-between font-mono py-5 mt-3'>
+       <div className=' text-white flex items-center  justify-between font-mono py-5 mt-1'>
         <div className='flex  items-center leftSide'>
           <div className="logo">
             <a href="" className='fw-bold '>
@@ -40,10 +39,16 @@ function Header() {
           <div  className='account '>
             <ul className='flex gap-4'>
               <li>
-                <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] cursor-pointer transition duration-700 md:text-[16px]" />
+                <Link to={"/favori"}>
+                   <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] cursor-pointer transition duration-700 md:text-[16px]" />
+                </Link>
+               
               </li>
               <li> 
-                 <FontAwesomeIcon icon={faUser} className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
+                <Link to={"/login"}>
+                  <FontAwesomeIcon icon={faUser} className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
+                </Link>
+                 
               </li>
                <FontAwesomeIcon icon={faBars} className="block md:hidden text-[20px] md:text-[16px] " />
             </ul>
