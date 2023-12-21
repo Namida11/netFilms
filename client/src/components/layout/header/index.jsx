@@ -24,8 +24,9 @@ function Header() {
           <div className='  '>
            <ul className='flex gap-4 text-[16px]'>
               <li> <a href="" className='transition duration-700 hover:text-[red]'> MOVIES</a></li>
-              <li><a href="" className='hover:text-[red]'>SERIES</a> </li>
-              <li> <a href="" className='hover:text-[red]'>KIDS</a></li>
+              <li><a href="" className='transition duration-700 hover:text-[red]'>SERIES</a> </li>
+              <li> <a href="" className='transition duration-700 hover:text-[red]'>KIDS</a></li>
+              
             </ul>
           </div>
           <div  className='account '>

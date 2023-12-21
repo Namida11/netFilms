@@ -6,6 +6,9 @@ function Home() {
     <>
     <div className='w-10/12 mx-auto'>
         <Header />
+        <div className='h-[350px]'>
+
+        </div>
         <Footer/>
     </div>
      
