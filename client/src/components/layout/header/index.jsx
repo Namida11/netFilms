@@ -3,7 +3,7 @@ import Input from '../../UI/input'
 import user from './user.svg'
 import search from './search.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faSearch, faUser,faBars  } from '@fortawesome/free-solid-svg-icons';
 
 
 function Header() {
@@ -12,15 +12,15 @@ function Header() {
        <div className=' text-white flex items-center  justify-between font-mono py-5 '>
         <div className='flex  items-center leftSide'>
           <div className="logo">
-            <a href="" className=' text-[40px] fw-bold'>
+            <a href="" className='text-[30px]  md:text-[35px] lg:text-[40px]  fw-bold'>
             NETFILM
             </a>
           </div>
         </div>
 
-        <div className=''>
-          <label htmlFor="" className='flex border border-white flex-row items-center gap-4  bg-white bg-opacity-10 shadow-xl'>
-            <Input placeholder={"Search..."} className={"w-[280px] outline-none bg-transparent"}/>
+        <div className='hidden  md:block md:flex'>
+          <label htmlFor="" className='flex  flex-row items-center gap-4  bg-white bg-opacity-10 shadow-xl'>
+            <Input placeholder={"Search..."} className={" w-[120px] sm:w-[170px] md:w-[220px] lg:w-[270px] outline-none bg-transparent"}/>
                <FontAwesomeIcon icon={faSearch} className="text-white w-[18px] h-[20px] px-3 cursor-pointer" />
           
           </label>
@@ -30,16 +30,25 @@ function Header() {
 
         <div className='flex gap-5 items-center rightSide'>
           <div className='  '>
-           <ul className='flex gap-4 text-[15px]'>
+           <ul className=' hidden  md:block md:flex  gap-4 md:text-[12px] lg:text-[15px]'>
               <li> <a href="" className='transition duration-700 hover:text-[red]'> MOVIES</a></li>
               <li><a href="" className='transition duration-700 hover:text-[red]'>SERIES</a> </li>
               <li> <a href="" className='transition duration-700 hover:text-[red]'>KIDS</a></li>
-               <li> <a href="" className='transition duration-700 hover:text-[red]'> <FontAwesomeIcon icon={faHeart} className="text-red" /></a></li>
-            </ul>
+           </ul>
+           <FontAwesomeIcon icon={faBars} className="block md:hidden text-[20px] md:text-[16px] " />
           </div>
           <div  className='account '>
-             <FontAwesomeIcon icon={faUser} className="text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
-            {/* <img src={user} alt="" width={30} height={30} className='cursor-pointer '/> */}
+            <ul className='flex gap-4'>
+              <li>
+                <FontAwesomeIcon icon={faHeart} className="text-red text-[20px] md:text-[16px]" />
+              </li>
+              <li> 
+                 <FontAwesomeIcon icon={faUser} className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
+              </li>
+              
+            </ul>
+           
+         
           </div>
         </div>
        </div>

@@ -44,7 +44,7 @@ function Footer() {
                 </label>
                 <button className='text-white text-[18px] font-bold	 bg-transparent border border-color-white font-mono py-[10px] px-[30px] transition duration-700 hover:bg-[red] rounded-md hover:text-white'>Sign in</button>
             </div>
-            <div className='text-black text-[12px] text-center py-3 font-mono'>
+            <div className='text-white text-[12px] text-center py-3 font-mono'>
                 <p>NETFILM ©ALL RIGHTS RESERVED</p>
             </div>
       </section>
