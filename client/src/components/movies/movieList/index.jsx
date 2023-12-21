@@ -3,10 +3,10 @@ import React from 'react'
 function MovieList() {
   return (
     <>
-    <section className='movies'>
-         <div className='text-[white]'>
-            <h2 className='text-[20px] border-b-2 border-red-500 font-bold py-2 pr-7 mb-5 inline-block'>Movies</h2>
-            <ul className='flex gap-7   flex-wrap '>
+    <section className='movies '>
+         <div className='text-[white] text-center md:text-start'>
+            <h2 className='text-[20px] border-b-2 border-red-500 font-bold py-2 pr-7 mb-10 inline-block'>Movies</h2>
+            <ul className='flex gap-7  flex-wrap justify-center md:justify-start '>
                 <li className='w-[150px]  border shadow-md rounded-md'> 
                     <a href=" " className=' '>
                         <img src="https://m.media-amazon.com/images/M/MV5BMjIzOTY1YTYtNmRhMC00MzAxLWEzMzUtM2ZiMmYwNTY0MjMyXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FMjpg_UX1000_.jpg" className='w-[100%] h-[100%] rounded-md' alt="" />

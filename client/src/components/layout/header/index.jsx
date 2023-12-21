@@ -9,11 +9,11 @@ import { faHeart, faSearch, faUser,faBars  } from '@fortawesome/free-solid-svg-i
 function Header() {
   return (
     <>
-       <div className=' text-white flex items-center  justify-between font-mono py-5 '>
+       <div className=' text-white flex items-center  justify-between font-mono py-5 mt-3'>
         <div className='flex  items-center leftSide'>
           <div className="logo">
-            <a href="" className='fw-bold'>
-             <span className='text-[red] text-[30px]   md:text-[35px] lg:text-[40px]'>NET</span><span className='text-[white] text-[20px]   md:text-[25px] lg:text-[30px]'>film</span>
+            <a href="" className='fw-bold '>
+             <span className='text-[red] text-[50px]   md:text-[45px] lg:text-[50px]'>NET</span><span className='text-[white] text-[25px]   md:text-[30px] lg:text-[35px]'>film</span>
             </a>
           </div>
         </div>
