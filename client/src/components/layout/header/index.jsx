@@ -12,8 +12,8 @@ function Header() {
        <div className=' text-white flex items-center  justify-between font-mono py-5 '>
         <div className='flex  items-center leftSide'>
           <div className="logo">
-            <a href="" className='text-[30px]  md:text-[35px] lg:text-[40px]  fw-bold'>
-            NETFILM
+            <a href="" className='fw-bold'>
+             <span className='text-[red] text-[30px]   md:text-[35px] lg:text-[40px]'>NET</span><span className='text-[white] text-[20px]   md:text-[25px] lg:text-[30px]'>film</span>
             </a>
           </div>
         </div>
@@ -40,7 +40,7 @@ function Header() {
           <div  className='account '>
             <ul className='flex gap-4'>
               <li>
-                <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] transition duration-700 md:text-[16px]" />
+                <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] cursor-pointer transition duration-700 md:text-[16px]" />
               </li>
               <li> 
                  <FontAwesomeIcon icon={faUser} className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]" />
