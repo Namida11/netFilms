@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .custom-button {
+    @apply bg-red-500 text-white px-4 py-2 rounded-md;
+  }
+  .bg-custom-image {
+    background-image: url("https://www.manzara.gen.tr/w1/harry-potter-resimleri.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+  
+
