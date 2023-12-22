@@ -5,15 +5,18 @@ import { faHeart, faSearch, faUser,faBars  } from '@fortawesome/free-solid-svg-i
 import { Link } from 'react-router-dom';
 
 
+
 function Header() {
   return (
     <>
        <div className=' text-white flex items-center  justify-between font-mono py-5 mt-1 '>
         <div className='flex  items-center leftSide'>
           <div className="logo">
-            <Link to={"/"} className='fw-bold'>
+            <Link to={"/"} className=''>
               
-             <span className='text-[red] text-[50px]   md:text-[45px] lg:text-[50px]'>NET</span><span className='text-[white] text-[25px]   md:text-[30px] lg:text-[35px]'>film</span>
+             <span className='text-[red] text-[50px] fw-bold  md:text-[45px] lg:text-[50px]'>NET</span>
+             <span className='text-[white] text-[25px]   md:text-[30px] lg:text-[35px] font-sans font-thin	'>film
+             </span>
            
             </Link>
           

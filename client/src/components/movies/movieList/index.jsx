@@ -14,7 +14,7 @@ function MovieList() {
                     <a href=" " className=' '>
                         <img src="https://m.media-amazon.com/images/M/MV5BMjIzOTY1YTYtNmRhMC00MzAxLWEzMzUtM2ZiMmYwNTY0MjMyXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FMjpg_UX1000_.jpg" className='w-[100%] h-[100%] rounded-md' alt="" />
                     </a>
-                    {/* <div className='absolute top-0 left-0 w-[100%] h-[100%] flex items-center justify-center bg-black bg-opacity-70 rounded-md'>
+                    <div className='absolute top-0 left-0 w-[100%] h-[100%] flex items-center justify-center bg-black bg-opacity-70 rounded-md'>
                         <ul className='flex gap-6  '>
                             <li>
                                  <FontAwesomeIcon icon={faHeart} className="text-red hover:text-[red] text-[20px] cursor-pointer transition duration-700 md:text-[20px]" />
@@ -25,7 +25,7 @@ function MovieList() {
                             </li>
                         </ul>
                         
-                    </div> */}
+                    </div>
 
                 </li>
                   <li className='w-[150px] border  shadow-md rounded-md'> 

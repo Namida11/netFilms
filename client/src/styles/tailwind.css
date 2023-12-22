@@ -36,5 +36,9 @@
   .star{
     color: #ffcc00;
   }
-  
+  .error{
+    color: rgb(215, 41, 41);
+    font-size: 14px;
+    padding-top: 5px;
+  }
 }
