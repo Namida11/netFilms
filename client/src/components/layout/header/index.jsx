@@ -8,12 +8,15 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <>
-       <div className=' text-white flex items-center  justify-between font-mono py-5 mt-1'>
+       <div className=' text-white flex items-center  justify-between font-mono py-5 mt-1 '>
         <div className='flex  items-center leftSide'>
           <div className="logo">
-            <a href="" className='fw-bold '>
+            <Link to={"/"} className='fw-bold'>
+              
              <span className='text-[red] text-[50px]   md:text-[45px] lg:text-[50px]'>NET</span><span className='text-[white] text-[25px]   md:text-[30px] lg:text-[35px]'>film</span>
-            </a>
+           
+            </Link>
+          
           </div>
         </div>
 
