@@ -6,7 +6,7 @@ import { faHeart ,faStar } from '@fortawesome/free-solid-svg-icons';
 function MovieList() {
   return (
     <>
-    <section className='movies '>
+    <section className='movies bg-[black] bg-opacity-100 '>
          <div className='text-[white] text-center md:text-start'>
             <h2 className='text-[20px] border-b-2 border-red-500 font-bold py-2 pr-7 mb-10 inline-block'>Movies</h2>
             <ul className='flex gap-7  flex-wrap justify-center md:justify-start '>
