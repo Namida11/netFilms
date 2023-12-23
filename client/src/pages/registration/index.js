@@ -2,27 +2,30 @@ import React from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import { basicSchemas } from "../../schemas";
+import { regSchemas } from "../../schemas";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const onSubmit = () => {
+const onSubmit = async (values, action) => {
   toast.success("Form başarıyla gönderildi!");
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  action.resetForm();
 };
-
 function Registration() {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         email: "",
         password: "",
+        confirmPassword: "",
       },
-      validationSchema: basicSchemas,
+      validationSchema: regSchemas,
       onSubmit,
     });
+
   return (
     <>
       <div className="w-10/12 mx-auto">
@@ -34,7 +37,7 @@ function Registration() {
             </h1>
             <div className="flex flex-col ">
               <label
-                htmlFor=""
+                htmlFor="email"
                 className="flex gap-4 w-[350px] h-[100%] pb-2 border-b text-white"
               >
                 <FontAwesomeIcon
@@ -43,6 +46,7 @@ function Registration() {
                 />
                 <input
                   type="email"
+                  id="email"
                   className="bg-transparent outline-none "
                   placeholder="Your Email"
                   value={values.email}
@@ -54,8 +58,8 @@ function Registration() {
                 <p className="error">{errors.email}</p>
               )}
               <label
-                htmlFor=""
-                className="flex gap-4 w-[100%] h-[100%] border-b text-white pb-2"
+                htmlFor="password"
+                className="flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6"
               >
                 <FontAwesomeIcon
                   icon={faEye}
@@ -63,6 +67,7 @@ function Registration() {
                 />
                 <input
                   type="password"
+                  id="password"
                   className="bg-transparent outline-none "
                   placeholder="Your Password"
                   value={values.password}
@@ -74,20 +79,30 @@ function Registration() {
                 <p className="error">{errors.password}</p>
               )}
               <label
-                htmlFor=""
-                className="flex gap-4 w-[100%] h-[100%] border-b text-white pb-2"
+                htmlFor="confirmPassword"
+                className="flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6"
               >
                 <FontAwesomeIcon
-                  icon={faEye}
+                  icon={faLock}
                   className="icon-mobile  md:icon-style px-2 cursor-pointer"
                 />
                 <input
                   type="password"
+                  id="confirmPassword"
                   className="bg-transparent outline-none "
                   placeholder="Confirm Password"
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
               </label>
-              <button className="bg-[red] hover:bg-opacity-50 text-white rounded-3xl py-3 shadow-md focus:ring text-[22px] mt-3 font-mono font-bold transition duration-700">
+              {errors.confirmPassword && touched.confirmPassword && (
+                <p className="error">{errors.confirmPassword}</p>
+              )}
+              <button
+                type="submit"
+                className="bg-[red] hover:bg-opacity-50 text-white rounded-3xl py-2 mt-10 shadow-md focus:ring text-[22px]  font-mono font-bold transition duration-700"
+              >
                 SIGN IN{" "}
               </button>
             </div>
@@ -100,6 +115,7 @@ function Registration() {
               </Link>
             </p>
           </form>
+          <ToastContainer />
         </section>
         <Footer />
       </div>

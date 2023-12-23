@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import { basicSchemas } from "../../schemas";
+import { loginSchemas } from "../../schemas";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const onSubmit = () => {
+const onSubmit = async (values, action) => {
   toast.success("Form başarıyla gönderildi!");
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  action.resetForm();
 };
-
 function Login() {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
@@ -20,7 +21,7 @@ function Login() {
         email: "",
         password: "",
       },
-      validationSchema: basicSchemas,
+      validationSchema: loginSchemas,
       onSubmit,
     });
   console.log(errors);
@@ -79,6 +80,7 @@ function Login() {
               <button
                 type="submit"
                 className="bg-[red] hover:bg-opacity-50 text-white rounded-3xl py-2 mt-10 text-[22px] font-mono font-bold transition duration-700"
+              
               >
                 LOG IN{" "}
               </button>
