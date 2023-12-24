@@ -10,12 +10,12 @@ import {
 import { Link } from "react-router-dom";
 
 function Header() {
-// const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-//   const handleSearch = () => {
-//     onSearch(searchTerm);
-    
-//   };
+  //   const handleSearch = () => {
+  //     onSearch(searchTerm);
+
+  //   };
 
   return (
     <>
@@ -43,19 +43,17 @@ function Header() {
               className={
                 " w-[120px] sm:w-[170px] md:w-[220px] lg:w-[270px] outline-none bg-transparent"
               }
-             
             />
             <FontAwesomeIcon
               icon={faSearch}
               className="text-white w-[18px] h-[20px] px-3 cursor-pointer"
-             
             />
           </label>
         </div>
 
         <div className="flex gap-5 items-center rightSide">
           <div className="  ">
-            <ul className=" hidden  md:block md:flex  gap-4 md:text-[12px] lg:text-[15px]">
+            <ul className=" menu hidden  md:block md:flex  gap-4 md:text-[12px] lg:text-[15px]">
               <li>
                 <Link
                   to={"/"}
@@ -95,10 +93,12 @@ function Header() {
                   />
                 </Link>
               </li>
-              <FontAwesomeIcon
-                icon={faBars}
-                className="block md:hidden text-[20px] md:text-[16px] "
-              />
+              <div className="mobile-menu-icon  ">
+                <FontAwesomeIcon
+                  icon={faBars}
+                  className="mobile-menu block md:hidden text-[20px] md:text-[16px] cursor-pointer "
+                />
+              </div>
             </ul>
           </div>
         </div>

@@ -11,27 +11,27 @@ function Footer() {
                 <h3 className='text-[white]  text-[14px] md:text-[18px] '>Follow us</h3>
                 <ul className='flex items-center gap-2 md:gap-5 icon-mobile  md:icon-style'>
                     <li>
-                        <a href="">
+                        <a href="https://twitter.com/mrsNamida">
                           <FontAwesomeIcon icon={faTwitter} className=" " />
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.instagram.com/namida.o3/?next=%2F">
                           <FontAwesomeIcon icon={faInstagram} className="" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/namida-yolchuyeva-627313246/">
                           <FontAwesomeIcon icon={faLinkedin} className="" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://github.com/Namida11">
                           <FontAwesomeIcon icon={faGithub} className="" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.youtube.com/channel/UC3Pf8gEUSg8bOCsKLU08IYA">
                           <FontAwesomeIcon icon={faYoutube} className="" />
                         </a>
                     </li>
