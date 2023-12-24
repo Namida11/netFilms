@@ -8,6 +8,7 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Header() {
   // const [searchTerm, setSearchTerm] = useState("");
@@ -16,6 +17,30 @@ function Header() {
   //     onSearch(searchTerm);
 
   //   };
+
+  const signOut = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/v1/auth/signout",
+        {
+          method: "POST",
+          headers: {
+            Authorization: Cookies.get("accessToken"),
+          },
+        }
+      );
+
+      if (response.ok) {
+        Cookies.remove("userId");
+        Cookies.remove("accessToken");
+        window.location.reload();
+      } else {
+        console.error("Sign-out failed:", response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred during sign-out:", error);
+    }
+  };
 
   return (
     <>
@@ -26,7 +51,7 @@ function Header() {
               <span className="text-[red] text-[50px] fw-bold  md:text-[45px] lg:text-[50px]">
                 NET
               </span>
-              <span className="text-[white] text-[25px]   md:text-[30px] lg:text-[35px] font-sans font-thin	">
+              <span className="text-[white] text-[25px]   md:text-[30px] lg:text-[35px] font-sans font-thin ">
                 film
               </span>
             </Link>
@@ -86,12 +111,16 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link to={"/login"}>
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]"
-                  />
-                </Link>
+                {!Cookies.get("userId") ? (
+                  <Link to={"/login"}>
+                    <FontAwesomeIcon
+                      icon={faUser}
+                      className="text-[20px] md:text-[16px] cursor-pointer transition duration-700 hover:text-[red]"
+                    />
+                  </Link>
+                ) : (
+                  <button onClick={() => signOut()}>Sil</button>
+                )}
               </li>
               <div className="mobile-menu-icon  ">
                 <FontAwesomeIcon
