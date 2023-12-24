@@ -17,6 +17,9 @@
   -ms-transition: ease-in 0.7ms  ;
   -o-transition: ease-in 0.7ms  ;
 }
+.bg-green{
+  background-color: green !important;
+}
   .custom-button:hover{
     opacity: 0.8;
   }

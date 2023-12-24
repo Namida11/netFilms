@@ -7,10 +7,11 @@ import Registration from "./pages/registration";
 
 
 function App() {
+  
   return (
-    <div className="App w-[100%] h-[100vh] overflow-y-auto position fixed  text-white bg-custom-image ">
+    <div className="App w-[100%] h-[100vh] overflow-y-auto position fixed  text-white bg-custom-image relative z-10 ">
       <div className="bg-custom-image fixed w-full h-full opacity-80 z-0"></div>
-      <div className="bg-gradient-to-br from-black to-black overflow-y-auto fixed rounded-md w-full h-full opacity-80 z-10 	">
+      <div className="bg-gradient-to-br from-black to-black overflow-y-auto  rounded-md w-full h-full opacity-80 z-0	">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />

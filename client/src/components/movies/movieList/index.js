@@ -4,6 +4,7 @@ import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { setMovies,addToFavorites } from "../../../store/moviesSlice";
+import toggleSlideBar  from "../../../store/sideBarSlice";
 
 
 import "react-toastify/dist/ReactToastify.css";
@@ -28,10 +29,10 @@ function MovieList() {
     console.log(isFavorited)
   };
  
-  useEffect(() => {
+ useEffect(() => {
     // API'den film verilerini al
     const genreId = 12;
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=9a1e397cb05b1da55c7ea902a0b9446c&query=${encodeURIComponent("Harry potter")}`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=9a1e397cb05b1da55c7ea902a0b9446c&query=${"Harry potter"}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -39,12 +40,18 @@ function MovieList() {
         return response.json();
       })
       .then((data) => {
-        // OMDb API'nin döndüğü veri içerisinde Search adlı bir özellik var
         dispatch(setMovies(data.results || []));
         setDisplayedMovies(data.results.slice(0, 15));
       })
       .catch((error) => console.error("Error fetching movies:", error));
   }, [dispatch]);
+
+  const isSlideBarOpen = useSelector((state) => state.slideBar.isSlideBarOpen);
+
+  const handleToggleSlideBar = () => {
+    dispatch(toggleSlideBar());
+  };
+
 
   return (
     <>
@@ -53,13 +60,13 @@ function MovieList() {
           <h2 className="text-[20px] border-b-2 border-red-500 font-bold py-2 pr-7 mb-10 inline-block">
             Movies
           </h2>
+
           <ul className="flex gap-7  flex-wrap justify-center md:justify-start">
             {displayedMovies.map((movie) => (
               <li
                 key={movie.id}
                 className="movie-list w-[200px] h-[300px] border shadow-md rounded-md"
               >
-              
                 <a href={`https://www.themoviedb.org/movie/${movie.id}`}>
                   <img
                     src={`${baseURL}original${movie.poster_path}`}
@@ -67,13 +74,19 @@ function MovieList() {
                     alt={movie.title}
                   />
                 </a>
-                <div key={movie.id} className=" review  hover:top-0 hover: right-0 w-[30%] h-[100%] flex items-center justify-center bg-black bg-opacity-90 rounded-md">
+                <div
+                  key={movie.id}
+                  className=" review  hover:top-0 hover: right-0 w-[30%] h-[100%] flex items-center justify-center bg-black bg-opacity-90 rounded-md"
+                >
                   <ul className="flex flex-col gap-6  ">
                     <li>
                       <FontAwesomeIcon
                         icon={faHeart}
-                        className={`text-${isFavorited ? "[red]" : "[white]"} text-[20px] cursor-pointer transition duration-500 md:text-[20px]`}
+                        className={`text-${
+                          isFavorited ? "[red]" : "[white]"
+                        } text-[20px] cursor-pointer transition duration-500 md:text-[20px]`}
                          onClick={() => addFav(movie)}
+                        // onClick={handleToggleSlideBar}
                       />
                     </li>
                     <li>
@@ -85,9 +98,8 @@ function MovieList() {
                     </li>
                   </ul>
                 </div>
-                <ToastContainer/>
+                <ToastContainer />
               </li>
-
             ))}
           </ul>
         </div>

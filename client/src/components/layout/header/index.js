@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../UI/input";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,6 +10,13 @@ import {
 import { Link } from "react-router-dom";
 
 function Header() {
+// const [searchTerm, setSearchTerm] = useState("");
+
+//   const handleSearch = () => {
+//     onSearch(searchTerm);
+    
+//   };
+
   return (
     <>
       <div className=" text-white flex items-center  justify-between font-mono py-5 mt-1 ">
@@ -36,10 +43,12 @@ function Header() {
               className={
                 " w-[120px] sm:w-[170px] md:w-[220px] lg:w-[270px] outline-none bg-transparent"
               }
+             
             />
             <FontAwesomeIcon
               icon={faSearch}
               className="text-white w-[18px] h-[20px] px-3 cursor-pointer"
+             
             />
           </label>
         </div>

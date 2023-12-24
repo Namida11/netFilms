@@ -5,7 +5,7 @@ function Button(props) {
      console.log(props.children)
   return (
 
-    <button className={`custom-button`}>{props.children}</button>
+    <button className={`custom-button ${props.className}`}>{props.children}</button>
     
   )
 }
