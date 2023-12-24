@@ -1,26 +1,54 @@
-import React from "react";
+
+import React, { useState } from "react";
 import Header from "../../components/layout/header";
 import Footer from "../../components/layout/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faEye, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faEye, faLock,faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { regSchemas } from "../../schemas";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Cookies from "js-cookie";
 const onSubmit = async (values, action) => {
-  toast.success("Form başarıyla gönderildi!");
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  action.resetForm();
+  try {
+    const response = await fetch("http://localhost:5000/api/v1/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullname: values.fullname,
+        email: values.email,
+        password: values.password,
+      }),
+    });
+    const dataJson = await response.json();
+    if (dataJson.success) {
+      Cookies.set("accessToken", dataJson.data.accessToken);
+      Cookies.set("userId", dataJson.data.userId);
+      toast.success("Success!");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      action.resetForm();
+      window.location.href = "/";
+    } else {
+      toast.error(`Registration failed: ${dataJson.error}`);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 function Registration() {
+  const [hiddenPassword, setHiddenPassword] = useState(true);
+  const [hiddenConfirmPassword, setHiddenConfirmPassword] = useState(true);
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         email: "",
         password: "",
         confirmPassword: "",
+        fullname: "",
       },
       validationSchema: regSchemas,
       onSubmit,
@@ -37,8 +65,29 @@ function Registration() {
             </h1>
             <div className="flex flex-col ">
               <label
+                htmlFor="fullname"
+                className="flex gap-4 w-[350px] h-[100%] pb-2 border-b text-white "
+              >
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="icon-mobile  md:icon-style px-2 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  id="fullname"
+                  className="bg-transparent outline-none "
+                  placeholder="Your Fullname"
+                  value={values.fullname}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+              </label>
+              {errors.fullname && touched.fullname && (
+                <p className="error">{errors.fullname}</p>
+              )}
+              <label
                 htmlFor="email"
-                className="flex gap-4 w-[350px] h-[100%] pb-2 border-b text-white"
+                className="flex gap-4 w-[350px] h-[100%] pb-2 border-b text-white mt-6"
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -61,12 +110,13 @@ function Registration() {
                 htmlFor="password"
                 className="flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6"
               >
-                <FontAwesomeIcon
-                  icon={faEye}
+              <FontAwesomeIcon
+                  onClick={() => setHiddenPassword(!hiddenPassword)}
+                  icon={hiddenPassword ? faEye : faLock}
                   className="icon-mobile  md:icon-style px-2 cursor-pointer"
                 />
                 <input
-                  type="password"
+                  type={hiddenPassword ? "password" : "text"}
                   id="password"
                   className="bg-transparent outline-none "
                   placeholder="Your Password"
@@ -83,11 +133,14 @@ function Registration() {
                 className="flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6"
               >
                 <FontAwesomeIcon
-                  icon={faLock}
+                  onClick={() =>
+                    setHiddenConfirmPassword(!hiddenConfirmPassword)
+                  }
+                  icon={hiddenConfirmPassword ? faEye : faLock}
                   className="icon-mobile  md:icon-style px-2 cursor-pointer"
                 />
                 <input
-                  type="password"
+                  type={hiddenConfirmPassword ? "password" : "text"}
                   id="confirmPassword"
                   className="bg-transparent outline-none "
                   placeholder="Confirm Password"
