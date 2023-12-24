@@ -41,4 +41,24 @@
     font-size: 14px;
     padding-top: 5px;
   }
+.movie-list {
+  position: relative;
+}
+
+.review {
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  transition: ease-in 0.5s;
+  -webkit-transition: ease-in 0.5s;
+  -moz-transition: ease-in 0.5s;
+  -ms-transition: ease-in 0.5s;
+  -o-transition: ease-in 0.5s;
+}
+
+.movie-list:hover .review {
+  visibility: visible;
+  
+}
 }

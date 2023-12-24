@@ -5,6 +5,7 @@ import { BrowserRouter, Router, Route, Link, Routes } from "react-router-dom";
 import Favori from "./pages/favori";
 import Registration from "./pages/registration";
 
+
 function App() {
   return (
     <div className="App w-[100%] h-[100vh] overflow-y-auto position fixed  text-white bg-custom-image ">
