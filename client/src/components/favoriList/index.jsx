@@ -14,7 +14,7 @@ const dispatch = useDispatch();
   };
   return (
    <>
-    <div className={`invisible fixed  z-50 top-0 right-0 border-[white] w-[230px] lg:w-[350px] h-full text-white bg-[black] sidebar ${isSlideBarOpen ? 'visible' : 'invisible'} ` }>
+    <div className={` invisible fixed  z-50 top-0 right-0 border-[white] w-[230px] lg:w-[350px] h-full text-white bg-[black] sidebar ${isSlideBarOpen ? 'visible' : 'invisible'} ` }>
      <div className='relative  '>
         <div className='p-[20px] '>
           <span className=' absolute  w-[24px] h-[24px] top-3 left-0 p-2 rounded-full bg-[red] inline-block flex justify-center items-center'>

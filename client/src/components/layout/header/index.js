@@ -6,6 +6,7 @@ import {
   faSearch,
   faUser,
   faBars,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -119,7 +120,12 @@ function Header() {
                     />
                   </Link>
                 ) : (
-                  <button onClick={() => signOut()}>Sil</button>
+                  <button onClick={() => signOut()}>
+                    <FontAwesomeIcon
+                      icon={faSignOutAlt}
+                      className="text-[white]-500 hover:text-red-700 cursor-pointer"
+                    />
+                  </button>
                 )}
               </li>
               <div className="mobile-menu-icon  ">
