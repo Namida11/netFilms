@@ -14,6 +14,7 @@ const onSubmit = async (values, action) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   action.resetForm();
 };
+
 function Login() {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
@@ -35,7 +36,7 @@ function Login() {
             <div className="flex flex-col ">
               <label
                 htmlFor="email"
-                className={`flex gap-4 w-[350px] h-[100%] py-2  border-b border-[grey] text-white items-center  `}
+                className={`flex gap-4 w-[350px] h-[100%] py-2  border-b border-[grey] text-white items-center `}
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -57,7 +58,7 @@ function Login() {
 
               <label
                 htmlFor="password"
-                className={`flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6  `}
+                className={`flex gap-4 w-[100%] h-[100%] border-b text-white py-2 mt-6 `}
               >
                 <FontAwesomeIcon
                   icon={faEye}
@@ -80,7 +81,6 @@ function Login() {
               <button
                 type="submit"
                 className="bg-[red] hover:bg-opacity-50 text-white rounded-3xl py-2 mt-10 text-[22px] font-mono font-bold transition duration-700"
-              
               >
                 LOG IN{" "}
               </button>
